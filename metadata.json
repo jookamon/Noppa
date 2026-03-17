@@ -1,0 +1,5 @@
+{
+  "name": "Noppasimulaattori",
+  "description": "Tilastollinen nopanheiton simulaattori, joka näyttää tulokset taulukkona ja kuvaajana.",
+  "requestFramePermissions": []
+}
