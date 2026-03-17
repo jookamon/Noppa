@@ -227,23 +227,19 @@ export default function App() {
                       <div className="w-2 h-2 rounded-full bg-indigo-500" />
                       Toteutunut
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-slate-200" />
-                      Teoreettinen (16.67%)
-                    </div>
                   </div>
                 </div>
                 
                 <div className="h-[350px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={results} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                    <BarChart data={results} margin={{ top: 20, right: 30, left: 0, bottom: 25 }}>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                       <XAxis 
                         dataKey="face" 
                         axisLine={false} 
                         tickLine={false} 
                         tick={{ fill: '#64748b', fontSize: 12, fontWeight: 600 }}
-                        label={{ value: 'Silmäluku', position: 'insideBottom', offset: -5, fontSize: 10, fill: '#94a3b8' }}
+                        label={{ value: 'Silmäluku', position: 'insideBottom', offset: -15, fontSize: 10, fill: '#94a3b8' }}
                       />
                       <YAxis 
                         axisLine={false} 
