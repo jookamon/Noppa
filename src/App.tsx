@@ -58,7 +58,7 @@ const DieFace = ({ value, className }: { value: number; className?: string }) =>
 };
 
 export default function App() {
-  const [rollCount, setRollCount] = useState<number>(1000);
+  const [rollCount, setRollCount] = useState<number>(10);
   const [results, setResults] = useState<RollResult[] | null>(null);
   const [isSimulating, setIsSimulating] = useState(false);
   const [currentDieValue, setCurrentDieValue] = useState(1);
@@ -113,8 +113,7 @@ export default function App() {
               <h1 className="text-3xl font-bold tracking-tight">Noppasimulaattori</h1>
             </div>
             <p className="text-slate-500 max-w-md">
-              Simuloi nopanheittoa tilastollisen todennäköisyyden näkökulmasta. 
-              Mitä enemmän heittoja, sitä lähemmäs tulokset asettuvat teoreettiseen 16,67 % todennäköisyyteen.
+              Tutki miten heittojen lukumäärä vaikuttaa eri silmälukujen todennäköisyyteen
             </p>
           </div>
           
@@ -179,10 +178,9 @@ export default function App() {
                   scale: [1, 1.1, 1, 1.1, 1]
                 }}
                 transition={{ repeat: Infinity, duration: 0.6 }}
-                className="w-32 h-32 rounded-2xl flex items-center justify-center shadow-2xl shadow-red-900/40 mb-8 overflow-hidden border-2 border-white/40 relative"
+                className="w-32 h-32 rounded-md flex items-center justify-center shadow-2xl shadow-red-900/40 mb-8 overflow-hidden border-2 border-white/40 relative"
                 style={{
-                  background: 'radial-gradient(circle at 30% 30%, rgba(244, 63, 94, 0.85), rgba(159, 18, 57, 0.95))',
-                  backdropFilter: 'blur(4px)'
+                  background: 'radial-gradient(circle at 30% 30%, rgba(244, 63, 94, 0.85), rgba(159, 18, 57, 0.95))'
                 }}
               >
                 {/* Glass highlight */}
