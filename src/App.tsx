@@ -238,13 +238,13 @@ export default function App() {
                         dataKey="face" 
                         axisLine={false} 
                         tickLine={false} 
-                        tick={{ fill: '#64748b', fontSize: 12, fontWeight: 600 }}
-                        label={{ value: 'Silmäluku', position: 'insideBottom', offset: -15, fontSize: 10, fill: '#94a3b8' }}
+                        tick={{ fill: '#64748b', fontSize: 14, fontWeight: 600 }}
+                        label={{ value: 'Silmäluku', position: 'insideBottom', offset: -15, fontSize: 12, fill: '#94a3b8' }}
                       />
                       <YAxis 
                         axisLine={false} 
                         tickLine={false} 
-                        tick={{ fill: '#64748b', fontSize: 11 }}
+                        tick={{ fill: '#64748b', fontSize: 13 }}
                         unit="%"
                       />
                       <Tooltip 
@@ -254,9 +254,9 @@ export default function App() {
                             const data = payload[0].payload as RollResult;
                             return (
                               <div className="bg-white p-3 border border-slate-200 shadow-xl rounded-xl">
-                                <p className="text-xs font-bold text-slate-400 uppercase mb-1">Silmäluku {data.face}</p>
-                                <p className="text-lg font-bold text-indigo-600">{data.percentage.toFixed(2)}%</p>
-                                <p className="text-[10px] text-slate-500">Heittoja: {data.count.toLocaleString()}</p>
+                                <p className="text-sm font-bold text-slate-400 uppercase mb-1">Silmäluku {data.face}</p>
+                                <p className="text-xl font-bold text-indigo-600">{data.percentage.toFixed(2)}%</p>
+                                <p className="text-[12px] text-slate-500">Heittoja: {data.count.toLocaleString()}</p>
                               </div>
                             );
                           }
@@ -278,14 +278,14 @@ export default function App() {
                           dataKey="percentage" 
                           position="top" 
                           formatter={(v: number) => `${v.toFixed(1)}%`}
-                          style={{ fontSize: 10, fontWeight: 700, fill: '#6366f1' }}
+                          style={{ fontSize: 12, fontWeight: 700, fill: '#6366f1' }}
                         />
                         <LabelList 
                           dataKey="count" 
                           position="insideTop" 
                           offset={10}
                           formatter={(v: number) => v.toLocaleString()}
-                          style={{ fontSize: 9, fontWeight: 600, fill: '#ffffff' }}
+                          style={{ fontSize: 11, fontWeight: 600, fill: '#ffffff' }}
                         />
                       </Bar>
                     </BarChart>
@@ -313,10 +313,10 @@ export default function App() {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-slate-100">
-                        <th className="text-left py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Silmäluku</th>
-                        <th className="text-right py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Lukumäärä</th>
-                        <th className="text-right py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Osuus (%)</th>
-                        <th className="text-right py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Poikkeama</th>
+                        <th className="text-left py-1 text-[12px] font-bold uppercase tracking-wider text-slate-400">Silmäluku</th>
+                        <th className="text-right py-1 text-[12px] font-bold uppercase tracking-wider text-slate-400">Lukumäärä</th>
+                        <th className="text-right py-1 text-[12px] font-bold uppercase tracking-wider text-slate-400">Osuus (%)</th>
+                        <th className="text-right py-1 text-[12px] font-bold uppercase tracking-wider text-slate-400">Poikkeama</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-50">
@@ -326,19 +326,19 @@ export default function App() {
                           <tr key={res.face} className="group hover:bg-slate-50 transition-colors">
                             <td className="py-1">
                               <div className="flex items-center gap-3">
-                                <div className="w-6 h-6 rounded-lg bg-indigo-50 flex items-center justify-center font-bold text-indigo-600 text-xs">
+                                <div className="w-6 h-6 rounded-lg bg-indigo-50 flex items-center justify-center font-bold text-indigo-600 text-sm">
                                   {res.face}
                                 </div>
                               </div>
                             </td>
-                            <td className="py-1 text-right font-mono font-medium text-xs">
+                            <td className="py-1 text-right font-mono font-medium text-sm">
                               {res.count.toLocaleString()}
                             </td>
-                            <td className="py-1 text-right font-mono font-medium text-xs">
+                            <td className="py-1 text-right font-mono font-medium text-sm">
                               {res.percentage.toFixed(2)}%
                             </td>
                             <td className={cn(
-                              "py-1 text-right font-mono font-bold text-[10px]",
+                              "py-1 text-right font-mono font-bold text-[12px]",
                               diff > 0 ? "text-emerald-500" : "text-rose-500"
                             )}>
                               {diff > 0 ? '+' : ''}{diff.toFixed(2)}%
